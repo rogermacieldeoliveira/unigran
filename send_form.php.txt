@@ -1,0 +1,43 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $companyName = $_POST['companyName'];
+    $companySize = $_POST['companySize'];
+    $methodologies = implode(", ", $_POST['methodologies']);
+    $methodologyChoice = $_POST['methodologyChoice'];
+    $tools = implode(", ", $_POST['tools']);
+    $toolsHelp = $_POST['toolsHelp'];
+    $companyFocus = $_POST['companyFocus'];
+    $efficiencyMeasures = implode(", ", $_POST['efficiencyMeasures']);
+    $revisions = $_POST['revisions'];
+    $revisionFrequency = $_POST['revisionFrequency'];
+    $newMethods = $_POST['newMethods'];
+    $futureMethods = $_POST['futureMethods'];
+    
+    $to = "rogermaciel.aula@gmail.com";
+    $subject = "Respostas ao Questionário de Gerência de Projetos";
+    $message = "
+    Nome da Empresa: $companyName\n
+    Porte da Empresa: $companySize\n
+    Metodologias Utilizadas: $methodologies\n
+    Escolha das Metodologias: $methodologyChoice\n
+    Ferramentas Utilizadas: $tools\n
+    Como as Ferramentas Ajudam: $toolsHelp\n
+    Foco da Empresa: $companyFocus\n
+    Medidas de Eficiência: $efficiencyMeasures\n
+    Revisões Periódicas: $revisions\n
+    Frequência das Revisões: $revisionFrequency\n
+    Abertura a Novas Metodologias: $newMethods\n
+    Metodologias/Ferramentas Futuras: $futureMethods\n
+    ";
+    
+    $headers = "From: rogermaciel.aula@gmail.com";
+    
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Formulário enviado com sucesso!";
+    } else {
+        echo "Erro ao enviar o formulário.";
+    }
+} else {
+    echo "Método de requisição inválido.";
+}
+?>

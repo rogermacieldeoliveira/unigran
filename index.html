@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário de Gerência de Projetos</title>
+</head>
+<body>
+    <h1>Questionário sobre Gerência de Projetos em Empresas de Software</h1>
+    <form id="projectManagementForm" action="send_form.php" method="post">
+        <h2>Informações Básicas</h2>
+        <label for="companyName">Qual é o nome da sua empresa?</label><br>
+        <input type="text" id="companyName" name="companyName" required><br><br>
+        
+        <label for="companySize">Qual é o porte da sua empresa?</label><br>
+        <select id="companySize" name="companySize" required>
+            <option value="Pequeno">Pequeno (até 10 funcionários)</option>
+            <option value="Médio">Médio (10-100 funcionários)</option>
+            <option value="Grande">Grande (mais de 100 funcionários)</option>
+        </select><br><br>
+        
+        <h2>Metodologias de Gerenciamento de Projetos</h2>
+        <label>Qual metodologia de gerenciamento de projetos sua empresa utiliza atualmente?</label><br>
+        <input type="checkbox" id="scrum" name="methodologies[]" value="Scrum">
+        <label for="scrum">Scrum</label><br>
+        <input type="checkbox" id="kanban" name="methodologies[]" value="Kanban">
+        <label for="kanban">Kanban</label><br>
+        <input type="checkbox" id="cascata" name="methodologies[]" value="Cascata">
+        <label for="cascata">Cascata</label><br>
+        <input type="checkbox" id="lean" name="methodologies[]" value="Lean">
+        <label for="lean">Lean</label><br>
+        <input type="checkbox" id="rup" name="methodologies[]" value="RUP">
+        <label for="rup">RUP</label><br>
+        <input type="checkbox" id="xp" name="methodologies[]" value="XP">
+        <label for="xp">XP</label><br>
+        <input type="checkbox" id="otherMethodology" name="methodologies[]" value="Outra">
+        <label for="otherMethodology">Outra (especificar)</label><br>
+        <input type="text" id="otherMethodologyText" name="otherMethodologyText"><br><br>
+        
+        <label for="methodologyChoice">Por que sua empresa escolheu essa(s) metodologia(s)?</label><br>
+        <textarea id="methodologyChoice" name="methodologyChoice" rows="4" cols="50" required></textarea><br><br>
+        
+        <h2>Ferramentas de Gerenciamento de Projetos</h2>
+        <label>Quais ferramentas sua empresa utiliza para gerenciar projetos?</label><br>
+        <input type="checkbox" id="jira" name="tools[]" value="Jira">
+        <label for="jira">Jira</label><br>
+        <input type="checkbox" id="trello" name="tools[]" value="Trello">
+        <label for="trello">Trello</label><br>
+        <input type="checkbox" id="msProject" name="tools[]" value="Microsoft Project">
+        <label for="msProject">Microsoft Project</label><br>
+        <input type="checkbox" id="asana" name="tools[]" value="Asana">
+        <label for="asana">Asana</label><br>
+        <input type="checkbox" id="basecamp" name="tools[]" value="Basecamp">
+        <label for="basecamp">Basecamp</label><br>
+        <input type="checkbox" id="monday" name="tools[]" value="Monday.com">
+        <label for="monday">Monday.com</label><br>
+        <input type="checkbox" id="otherTool" name="tools[]" value="Outra">
+        <label for="otherTool">Outra (especificar)</label><br>
+        <input type="text" id="otherToolText" name="otherToolText"><br><br>
+        
+        <label for="toolsHelp">Como essas ferramentas ajudam no gerenciamento dos projetos?</label><br>
+        <textarea id="toolsHelp" name="toolsHelp" rows="4" cols="50" required></textarea><br><br>
+        
+        <h2>Foco da Empresa</h2>
+        <label>Qual é o principal foco da sua empresa?</label><br>
+        <select id="companyFocus" name="companyFocus" required>
+            <option value="Desenvolvimento de software personalizado">Desenvolvimento de software personalizado</option>
+            <option value="Desenvolvimento de produtos próprios">Desenvolvimento de produtos próprios</option>
+            <option value="Consultoria em TI">Consultoria em TI</option>
+            <option value="Suporte e manutenção de sistemas">Suporte e manutenção de sistemas</option>
+            <option value="Outra">Outra (especificar)</option>
+        </select><br>
+        <input type="text" id="companyFocusText" name="companyFocusText"><br><br>
+        
+        <h2>Eficiência e Melhoria Contínua</h2>
+        <label>Como sua empresa mede a eficiência do gerenciamento de projetos?</label><br>
+        <input type="checkbox" id="prazos" name="efficiencyMeasures[]" value="Cumprimento de prazos">
+        <label for="prazos">Cumprimento de prazos</label><br>
+        <input type="checkbox" id="qualidade" name="efficiencyMeasures[]" value="Qualidade do produto final">
+        <label for="qualidade">Qualidade do produto final</label><br>
+        <input type="checkbox" id="satisfacao" name="efficiencyMeasures[]" value="Satisfação do cliente">
+        <label for="satisfacao">Satisfação do cliente</label><br>
+        <input type="checkbox" id="recursos" name="efficiencyMeasures[]" value="Eficiência de recursos">
+        <label for="recursos">Eficiência de recursos</label><br>
+        <input type="checkbox" id="otherMeasure" name="efficiencyMeasures[]" value="Outra">
+        <label for="otherMeasure">Outra (especificar)</label><br>
+        <input type="text" id="otherMeasureText" name="otherMeasureText"><br><br>
+        
+        <label>Suas empresa realiza revisões e ajustes periódicos nas metodologias de gerenciamento de projetos?</label><br>
+        <input type="radio" id="revisoesSim" name="revisions" value="Sim" required>
+        <label for="revisoesSim">Sim</label><br>
+        <input type="radio" id="revisoesNao" name="revisions" value="Não">
+        <label for="revisoesNao">Não</label><br><br>
+        
+        <label for="revisionFrequency">Se sim, com que frequência são feitas essas revisões?</label><br>
+        <select id="revisionFrequency" name="revisionFrequency">
+            <option value="A cada sprint/projeto">A cada sprint/projeto</option>
+            <option value="Mensalmente">Mensalmente</option>
+            <option value="Trimestralmente">Trimestralmente</option>
+            <option value="Anualmente">Anualmente</option>
+            <option value="Outra">Outra (especificar)</option>
+        </select><br>
+        <input type="text" id="revisionFrequencyText" name="revisionFrequencyText"><br><br>
+        
+        <h2>Feedback e Melhoria</h2>
+        <label>Suas empresa está aberta a experimentar novas metodologias ou ferramentas de gerenciamento de projetos?</label><br>
+        <input type="radio" id="experimentarSim" name="newMethods" value="Sim" required>
+        <label for="experimentarSim">Sim</label><br>
+        <input type="radio" id="experimentarNao" name="newMethods" value="Não">
+        <label for="experimentarNao">Não</label><br><br>
+        
+        <label for="futureMethods">Se sim, qual metodologia ou ferramenta sua empresa gostaria de experimentar no futuro?</label><br>
+        <textarea id="futureMethods" name="futureMethods" rows="4" cols="50"></textarea><br><br>
+        
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
